@@ -1,1 +1,53 @@
+name: Medicare site hygiene
 
+on:
+  push:
+    paths:
+      - ".github/workflows/medicare-site-hygiene.yml"
+      - ".githooks/pre-commit"
+      - "artifacts/medicare-site/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+  pull_request:
+    paths:
+      - ".github/workflows/medicare-site-hygiene.yml"
+      - ".githooks/pre-commit"
+      - "artifacts/medicare-site/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hygiene:
+    name: Check focused tests and viewport guards
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.26.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check Vitest test hygiene
+        run: pnpm --filter @workspace/medicare-site run check:unit-hygiene
+
+      - name: Check Playwright spec hygiene
+        run: pnpm --filter @workspace/medicare-site run check:viewport-guards
