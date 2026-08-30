@@ -1,0 +1,74 @@
+<title>My Doctor Takes My Plan — So Why Can't I Go? California Medical Groups Explained | Medicare with Ashley</title>
+<meta name="description" content="Your doctor takes your plan — so why can't you get a referral? California's medical group system explained by San Diego Medicare broker Ashley Watson.">
+<meta name="date" content="2026-08-04">
+
+<h1>My Doctor Takes My Plan — So Why Can't I Go? California Medical Groups, Explained</h1>
+
+<p>If you've ever called your doctor's office, asked "do you take this Medicare plan?", heard a confident "yes" — and then found out later you still can't be seen, you are not losing your mind. You ran into one of the most confusing things about Medicare Advantage here in California, and almost nobody explains it to you before you enroll.</p>
+
+<p>I'm Ashley, a licensed Medicare broker here in San Diego County, and untangling this exact knot is a big part of what I do for my clients. So let me walk you through it in plain English.</p>
+
+<h2>The Scenario I See All the Time</h2>
+
+<p>A client picks a Medicare Advantage plan. They love their primary doctor, and the office confirmed they take the plan. Great. Then they go to schedule with their cardiologist — same plan — and the specialist's office says, "I'm sorry, we can't see you with this."</p>
+
+<p>Both offices "take" the same carrier. So what happened?</p>
+
+<p>The answer is a layer of the system most people have never heard of: the medical group.</p>
+
+<h2>What a Medical Group (or IPA) Actually Is</h2>
+
+<p>In California, most Medicare Advantage HMO plans don't manage your day-to-day care directly. Instead, the insurance carrier hands ("delegates") that job to a medical group or an IPA — an Independent Physician Association. That medical group is the one that actually coordinates your referrals, approves your specialist visits, and maintains its own network of doctors, specialists, and hospitals.</p>
+
+<p>Here's the part that trips everyone up: one carrier can contract with several different medical groups in the same county. And a single medical group can contract with several different carriers.</p>
+
+<p>So when your doctor's office says "yes, we take that plan," what they usually mean is: "we take that plan through the specific medical group we belong to." If your specialist belongs to a different group — even under the exact same insurance carrier — the two don't automatically connect.</p>
+
+<p>That's the whole trap in one sentence: <strong>the carrier gets you in the door, but the medical group decides which rooms you can actually walk into.</strong></p>
+
+<h2>Why "Do You Take Humana?" Is the Wrong Question</h2>
+
+<p>"Do you take Humana?" (or Alignment, or SCAN, or any carrier) feels like the obvious question. But it's incomplete. A "yes" only tells you the office contracts with that carrier through at least one medical group — not that they contract through <em>your</em> group, and not that the specialists you'll eventually need are in that same group's network.</p>
+
+<p>The question that actually protects you is: <strong>"Which medical group do you take this plan through — and are the specialists I need in that same group?"</strong></p>
+
+<h2>What This Looks Like in San Diego County</h2>
+
+<p>Your primary doctor might be in Mercy Physicians, and your cardiologist might be in Regal. You could hold a plan that both of them technically "take" — but if the plan routes you through Mercy Physicians, your Regal cardiologist may be out of reach, and vice versa. Same insurance card. Two different worlds.</p>
+
+<p>In San Diego we have several medical groups — you might recognize yours: Regal, Primary Care Associates of California, Scripps SDPMG, Optum, Greater Tri-Cities, Blue Zones, Health Excel, Prospect Medical Group, Golden Physicians, Sharp Community, Sharp Rees-Stealy, Sound, Integrated Health Partners, Family Health Centers, UCSD, Mercy Physicians, and others.</p>
+
+<h2>The Right Questions to Ask (Before You Enroll, Not After)</h2>
+
+<p>This is the short list I'd hand a friend. Ask these of every doctor you can't live without:</p>
+
+<ol>
+  <li><strong>Which medical group is my primary care doctor in?</strong> This is the anchor for everything else. In an HMO, your primary doctor's medical group usually determines which specialists and hospitals you can be referred to.</li>
+  <li><strong>Do you take this plan specifically through that medical group?</strong> A plain "we take that plan" isn't enough. You want to hear the medical group named.</li>
+  <li><strong>Are the specialists I already see — or expect to need — in that same group's network?</strong> Your cardiologist, oncologist, orthopedist, the works. If they're in a different group, that's a red flag to sort out before you sign anything.</li>
+  <li><strong>Which hospitals does this medical group use?</strong> Your group affiliation can steer which hospital you'd go to for a planned procedure. Worth knowing up front.</li>
+</ol>
+
+<h2>A Real Example From My Own Clients</h2>
+
+<p>Susan, now a client of mine, wanted to see a specialist at UCSD. They told her they take Humana. She changed her insurance to Humana and they still wouldn't see her. The problem was her PCP was in a different medical group, and that specialist was not in the same network.</p>
+
+<p>As a broker, I live in the "Find a Doctor" search tool for all the insurance providers. If you have several doctors, I'll write down each medical group each doctor participates in and find the common group. If there is no common group, you will not be able to keep all the doctors — and you deserve to know that <em>before</em> you enroll, not after.</p>
+
+<h2>"So Should I Just Get a PPO?"</h2>
+
+<p>Fair question, and here's the honest answer: it's not that simple.</p>
+
+<p>Medicare Advantage PPO plans generally don't lock you into a single medical group the way HMOs do — you can usually see any contracted provider without the group-to-group referral maze. That flexibility is real, and for someone with specialists scattered across different groups, it can be the deciding factor.</p>
+
+<p>But PPOs come with their own trade-offs — different premiums, different cost-sharing, out-of-network rules, and their own network limits. "PPO" is not a magic word that makes every doctor available. The right plan type depends on your specific doctors, your prescriptions, your budget, and how you like to get care. That's a real conversation, not a one-size-fits-all rule. In addition, some providers — such as federally qualified health centers — choose not to bill PPOs.</p>
+
+<h2>How to Avoid the Trap Entirely</h2>
+
+<p>Honestly? This is exactly the kind of thing a good local broker exists to catch — before you're stuck.</p>
+
+<p>When I sit down with someone, I don't just ask which plan they want. I ask who their doctors are — the primary, the specialists, all of them — and I map out which medical groups they belong to first. Then we find a plan where the people you actually depend on live in the same network. No surprises at the specialist's front desk six weeks later.</p>
+
+<p>And because I come to you — I meet clients in their homes across the South Bay, Chula Vista, National City, El Cajon, La Mesa, Escondido, and the rest of San Diego County — we can go through your actual list of doctors together, at your kitchen table, at no cost to you.</p>
+
+<p>If you've been told "we take your plan" and then hit a wall, or you just want to make sure your doctors line up before the next enrollment period, <a href="/schedule">let's talk</a>. You can also reach me directly at <a href="tel:+16199472325">(619) 947-2325</a> or <a href="mailto:ashley@watsoninsurancesd.com">ashley@watsoninsurancesd.com</a>.</p>
