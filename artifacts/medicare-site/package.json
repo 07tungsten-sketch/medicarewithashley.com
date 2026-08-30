@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
-    "build": "pnpm run test:unit && vite build --config vite.config.ts && vite build --config vite.ssr.config.ts && node prerender.mjs && node scripts/validate-prerender.mjs && node scripts/validate-inner-prerender.mjs && node scripts/validate-seo-output.mjs && node scripts/validate-canonical-server.mjs",
-    "build:ci": "PORT=25970 BASE_PATH=/ vite build --config vite.config.ts && PORT=25970 BASE_PATH=/ vite build --config vite.ssr.config.ts && node prerender.mjs && node scripts/validate-prerender.mjs && node scripts/validate-inner-prerender.mjs && node scripts/validate-seo-output.mjs && node scripts/validate-canonical-server.mjs && pnpm run verify-prerender",
+    "build": "pnpm run test:unit && vite build --config vite.config.ts && vite build --config vite.ssr.config.ts && node prerender.mjs && node scripts/validate-prerender.mjs && node scripts/validate-inner-prerender.mjs && node scripts/validate-seo-output.mjs && node scripts/validate-irmaa-release.mjs && node scripts/validate-canonical-server.mjs",
+    "build:ci": "PORT=25970 BASE_PATH=/ vite build --config vite.config.ts && PORT=25970 BASE_PATH=/ vite build --config vite.ssr.config.ts && node prerender.mjs && node scripts/validate-prerender.mjs && node scripts/validate-inner-prerender.mjs && node scripts/validate-seo-output.mjs && node scripts/validate-irmaa-release.mjs && node scripts/validate-canonical-server.mjs && pnpm run verify-prerender",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "start": "node artifacts/medicare-site/server.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
@@ -19,6 +19,7 @@
     "verify-prerender": "node scripts/verify-prerender.mjs",
     "check:viewport-guards": "node e2e/check-viewport-guards.mjs",
     "test:e2e": "node e2e/check-viewport-guards.mjs && playwright test",
+    "verify:production-seo": "node scripts/verify-production-seo.mjs",
     "indexnow": "node scripts/indexnow.mjs",
     "indexnow:all": "node scripts/indexnow.mjs --all"
   },

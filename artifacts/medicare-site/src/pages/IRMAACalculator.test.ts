@@ -7,7 +7,6 @@ import IRMAACalculator, {
   getTier,
   IRMAA_2026,
   MFS_DISPLAY,
-  formatIncomeRange,
   TIER_DISPLAY,
 } from "./IRMAACalculator";
 
@@ -36,6 +35,21 @@ const EXPECTED_MFS_RANGES = [
   "$109,001 – $390,999",
   "$391,000+",
 ];
+
+const EXPECTED_CMS_RELEASE = {
+  year: 2026,
+  cmsReleaseDate: "November 14, 2025",
+  cmsSourceUrl:
+    "https://www.cms.gov/newsroom/fact-sheets/2026-medicare-parts-b-premiums-deductibles",
+  partBStandard: 202.9,
+  partBDeductible: 283,
+} as const;
+
+const EXPECTED_THRESHOLDS = {
+  single: [109000, 137000, 171000, 205000, 499999.99, Infinity],
+  joint: [218000, 274000, 342000, 410000, 749999.99, Infinity],
+  mfs: [109000, 390999.99, Infinity],
+} as const;
 
 const EXPECTED_PREMIUM_AMOUNTS = {
   standardAndIrmaa: [
@@ -113,33 +127,12 @@ function readReferenceTableRows(markup: string, testId: string): string[][] {
   );
 }
 
-function tierRange(
-  status: IncomeStatus,
-  index: number,
-): string {
-  const tier = IRMAA_2026.tiers[index];
-  const previousTier = IRMAA_2026.tiers[index - 1];
-  const max = status === "single" ? tier.singleMax : tier.jointMax;
-  const previousMax =
-    previousTier === undefined
-      ? undefined
-      : status === "single"
-        ? previousTier.singleMax
-        : previousTier.jointMax;
-
-  return formatIncomeRange(max, previousMax);
-}
-
 function firstIncomeInTier(
   status: IncomeStatus,
   index: number,
 ): number {
-  const previousTier = IRMAA_2026.tiers[index - 1];
-  if (previousTier === undefined) return 0;
-
-  const previousMax =
-    status === "single" ? previousTier.singleMax : previousTier.jointMax;
-  return Math.floor(previousMax) + 1;
+  const previousMax = EXPECTED_THRESHOLDS[status][index - 1];
+  return previousMax === undefined ? 0 : Math.floor(previousMax) + 1;
 }
 
 describe("IRMAA income range display", () => {
@@ -149,14 +142,6 @@ describe("IRMAA income range display", () => {
   ] as const)(
     "derives every %s range from the annual tier configuration",
     (status, rangeKey) => {
-      const expectedRanges = IRMAA_2026.tiers.map((_, index) =>
-        tierRange(status, index),
-      );
-
-      expect(TIER_DISPLAY.map((display) => display[rangeKey])).toEqual(
-        expectedRanges,
-      );
-
       expect(TIER_DISPLAY.map((display) => display[rangeKey])).toEqual(
         status === "single" ? EXPECTED_SINGLE_RANGES : EXPECTED_JOINT_RANGES,
       );
@@ -164,11 +149,6 @@ describe("IRMAA income range display", () => {
   );
 
   it("derives every Married Filing Separately range from the annual configuration", () => {
-    const expectedRanges = IRMAA_2026.mfs.map((tier, index) =>
-      formatIncomeRange(tier.max, IRMAA_2026.mfs[index - 1]?.max),
-    );
-
-    expect(MFS_DISPLAY.map((display) => display.range)).toEqual(expectedRanges);
     expect(MFS_DISPLAY.map((display) => display.range)).toEqual(
       EXPECTED_MFS_RANGES,
     );
@@ -177,14 +157,12 @@ describe("IRMAA income range display", () => {
   it.each(["single", "joint"] as const)(
     "shows the selected %s range at each tier's representative boundaries",
     (status) => {
-      IRMAA_2026.tiers.forEach((tier, index) => {
+      EXPECTED_THRESHOLDS[status].forEach((maxIncome, index) => {
         const expectedRange =
           (status === "single" ? EXPECTED_SINGLE_RANGES : EXPECTED_JOINT_RANGES)[
             index
           ];
         const firstIncome = firstIncomeInTier(status, index);
-        const maxIncome =
-          status === "single" ? tier.singleMax : tier.jointMax;
         const representativeIncomes = Number.isFinite(maxIncome)
           ? [firstIncome, maxIncome]
           : [firstIncome];
@@ -197,27 +175,24 @@ describe("IRMAA income range display", () => {
   );
 
   it("keeps Married Filing Separately selection boundaries aligned with displayed ranges", () => {
-    IRMAA_2026.mfs.forEach((tier, index) => {
+    EXPECTED_THRESHOLDS.mfs.forEach((maxIncome, index) => {
       const expectedRange = EXPECTED_MFS_RANGES[index];
-      const firstIncome =
-        index === 0 ? 0 : Math.floor(IRMAA_2026.mfs[index - 1].max) + 1;
+      const firstIncome = index === 0
+        ? 0
+        : Math.floor(EXPECTED_THRESHOLDS.mfs[index - 1]) + 1;
 
       expect(getTier(firstIncome, "mfs")?.range).toBe(expectedRange);
 
-      if (Number.isFinite(tier.max)) {
-        expect(getTier(tier.max, "mfs")?.range).toBe(expectedRange);
+      if (Number.isFinite(maxIncome)) {
+        expect(getTier(maxIncome, "mfs")?.range).toBe(expectedRange);
       }
     });
   });
 
-  it.each([
-    ["single", "singleMax"],
-    ["joint", "jointMax"],
-  ] as const)(
+  it.each(["single", "joint"] as const)(
     "moves to the next %s range on the first dollar after a threshold",
-    (status, maxKey) => {
-      IRMAA_2026.tiers.slice(0, -1).forEach((tier, index) => {
-        const threshold = tier[maxKey];
+    (status) => {
+      EXPECTED_THRESHOLDS[status].slice(0, -1).forEach((threshold, index) => {
         const expectedRanges =
           status === "single" ? EXPECTED_SINGLE_RANGES : EXPECTED_JOINT_RANGES;
 
@@ -230,12 +205,47 @@ describe("IRMAA income range display", () => {
   );
 
   it("moves from the second MFS tier to the top tier at $391,000", () => {
-    const secondTier = IRMAA_2026.mfs[1];
+    const secondTierMax = EXPECTED_THRESHOLDS.mfs[1];
 
-    expect(getTier(secondTier.max, "mfs")?.range).toBe(EXPECTED_MFS_RANGES[1]);
-    expect(getTier(Math.floor(secondTier.max) + 1, "mfs")?.range).toBe(
+    expect(getTier(secondTierMax, "mfs")?.range).toBe(EXPECTED_MFS_RANGES[1]);
+    expect(getTier(Math.floor(secondTierMax) + 1, "mfs")?.range).toBe(
       EXPECTED_MFS_RANGES[2],
     );
+  });
+});
+
+describe("2026 CMS release configuration", () => {
+  it("keeps the annual release metadata and standard costs aligned with CMS", () => {
+    expect({
+      year: IRMAA_2026.year,
+      cmsReleaseDate: IRMAA_2026.cmsReleaseDate,
+      cmsSourceUrl: IRMAA_2026.cmsSourceUrl,
+      partBStandard: IRMAA_2026.partBStandard,
+      partBDeductible: IRMAA_2026.partBDeductible,
+    }).toEqual(EXPECTED_CMS_RELEASE);
+  });
+
+  it("keeps every filing-status threshold independently aligned with CMS", () => {
+    expect(IRMAA_2026.tiers.map((tier) => tier.singleMax)).toEqual(
+      EXPECTED_THRESHOLDS.single,
+    );
+    expect(IRMAA_2026.tiers.map((tier) => tier.jointMax)).toEqual(
+      EXPECTED_THRESHOLDS.joint,
+    );
+    expect(IRMAA_2026.mfs.map((tier) => tier.max)).toEqual(
+      EXPECTED_THRESHOLDS.mfs,
+    );
+  });
+});
+
+describe("IRMAA CMS source attribution", () => {
+  it("renders the annual release link, date, standard premium, and deductible", () => {
+    const markup = renderCalculatorMarkup();
+
+    expect(markup).toContain(`href="${EXPECTED_CMS_RELEASE.cmsSourceUrl}"`);
+    expect(markup).toContain(EXPECTED_CMS_RELEASE.cmsReleaseDate);
+    expect(markup).toContain("$202.90");
+    expect(markup).toContain("$283");
   });
 });
 

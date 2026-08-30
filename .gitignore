@@ -53,3 +53,17 @@ playwright/.cache/
 # Replit
 .cache/
 .local/
+
+# Workspace-only material
+/attached_assets/
+/.agents/
+/seo_strategy.md
+/threat_model.md
+
+# Keep the GitHub mirror focused on the Medicare application
+/artifacts/*
+!/artifacts/medicare-site/
+!/artifacts/medicare-site/**
+/artifacts/medicare-site/dist/
+/artifacts/medicare-site/node_modules/
+/artifacts/medicare-site/test-results/
