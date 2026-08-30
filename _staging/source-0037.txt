@@ -1,0 +1,103 @@
+<title>HMO vs. PPO Medicare Plans in San Diego | Medicare with Ashley</title>
+<meta name="description" content="What's the difference between an HMO and a PPO Medicare Advantage plan in San Diego? Here's a clear breakdown to help you choose the right structure for your needs.">
+<meta name="date" content="2026-05-06">
+
+<h1>HMO vs. PPO Medicare Plans in San Diego: What's the Difference?</h1>
+
+<p>If you're comparing Medicare Advantage plans in San Diego, you've probably noticed they come in different types — most commonly HMO and PPO. The plan type affects how you access care, which doctors you can see, and how much you pay. Here's what you need to know before you choose.</p>
+
+<h2>What Is an HMO Medicare Plan?</h2>
+
+<p>HMO stands for Health Maintenance Organization. With an HMO Medicare Advantage plan:</p>
+<ul>
+  <li>You choose a primary care physician (PCP) from the plan's network</li>
+  <li>You need a <strong>referral from your PCP</strong> to see a specialist</li>
+  <li>You must use <strong>in-network doctors and hospitals</strong> for covered services (except emergencies)</li>
+  <li>Out-of-network care is generally not covered, with rare exceptions</li>
+</ul>
+
+<p>HMO plans typically have <strong>lower premiums and copays</strong> in exchange for this network restriction. In San Diego, many $0-premium Medicare Advantage plans are HMOs.</p>
+
+<h2>What Is a PPO Medicare Plan?</h2>
+
+<p>PPO stands for Preferred Provider Organization. With a PPO Medicare Advantage plan:</p>
+<ul>
+  <li>You can see <strong>any doctor who accepts Medicare</strong>, inside or outside the plan's network</li>
+  <li><strong>No referrals needed</strong> to see a specialist</li>
+  <li>In-network care costs less; out-of-network care is covered but at higher cost-sharing</li>
+</ul>
+
+<p>PPO plans offer more flexibility — especially valuable if you see multiple specialists, travel frequently, or have providers in different health systems. The trade-off is usually a higher premium or higher out-of-pocket costs.</p>
+
+<h2>HMO vs. PPO: Side-by-Side Comparison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>HMO</th>
+      <th>PPO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Referrals required</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Network restriction</td>
+      <td>In-network only</td>
+      <td>In- and out-of-network</td>
+    </tr>
+    <tr>
+      <td>Out-of-network coverage</td>
+      <td>Emergency only</td>
+      <td>Yes (at higher cost)</td>
+    </tr>
+    <tr>
+      <td>Monthly premium</td>
+      <td>Often $0</td>
+      <td>Usually higher</td>
+    </tr>
+    <tr>
+      <td>Typical copays</td>
+      <td>Lower</td>
+      <td>Higher out-of-network</td>
+    </tr>
+    <tr>
+      <td>Best for</td>
+      <td>Lower costs, coordinated care</td>
+      <td>Flexibility, specialist access</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Which Plan Type Is More Common in San Diego?</h2>
+
+<p>San Diego has a strong HMO market, with large health systems like Sharp HealthCare and Scripps Health offering tightly coordinated networks. Many $0-premium Medicare Advantage plans in San Diego are HMOs built around these systems. If your doctors are already within Sharp or Scripps, an HMO can work very well and save you money.</p>
+
+<p>PPO plans are also available in San Diego, typically from carriers like Aetna, Humana, and United Healthcare. These can be a better fit if you see providers across multiple health systems, have a specialist outside a major network, or want flexibility to seek a second opinion without navigating a referral process.</p>
+
+<h2>Does an HMO or PPO Work With My Doctors?</h2>
+
+<p>This is the most important question — and the one that requires checking actual plan directories, not just plan type. Two HMO plans in San Diego can have very different networks. Ashley Watson checks whether your specific doctors are in-network for any plan you're considering before making a recommendation. It's one of the most valuable parts of the process and takes about five minutes with the right tools.</p>
+
+<h2>What About HMO-POS Plans?</h2>
+
+<p>Some plans are labeled HMO-POS (Point of Service), which is a hybrid. These are primarily HMO plans that allow some out-of-network use under specific circumstances, usually at a higher cost-share. They're worth understanding if you're interested in the lower costs of an HMO but occasionally need flexibility.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Can I see a specialist without a referral on an HMO?</h3>
+<p>Generally, no — HMO plans require a referral from your primary care physician for specialist visits. There are some exceptions (OB-GYN care, emergency visits), but for most specialist appointments, you'll need a referral first.</p>
+
+<h3>What happens if I use an out-of-network doctor on an HMO?</h3>
+<p>For non-emergency care, it typically won't be covered. You'd be responsible for the full cost. This is why verifying your doctors' network participation before enrolling is so important.</p>
+
+<h3>Which costs less over a full year — HMO or PPO?</h3>
+<p>It depends on how much you use your coverage. HMOs usually have lower premiums and copays for in-network care. PPOs can be more cost-effective if you need a lot of out-of-network care. Ashley can help you run the numbers based on your actual health usage.</p>
+
+<h2>Find the Right Plan for Your San Diego Doctors</h2>
+
+<p>The best plan isn't the one with the lowest premium — it's the one that covers your doctors, fits your care style, and keeps your total costs manageable. Ashley Watson helps San Diego County residents find that plan at no cost. <a href="/schedule">Schedule a free consultation</a> or call <a href="tel:+16199472325">(619) 947-2325</a>.</p>
