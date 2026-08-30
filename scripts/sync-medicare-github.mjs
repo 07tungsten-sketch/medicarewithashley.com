@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process";
-import { mkdtempSync, rmSync } from "node:fs";
+import { mkdirSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -9,6 +9,8 @@ const MIRROR_BRANCH = "github-main";
 const APPROVED_PATHS = [
   ".gitignore",
   ".githooks/pre-commit",
+  ".github/workflows/medicare-site-hygiene.yml",
+  "README.md",
   "artifacts/medicare-site",
   "lib/api-client-react",
   "package.json",
@@ -19,8 +21,23 @@ const APPROVED_PATHS = [
   "tsconfig.json",
   "scripts",
 ];
-const EXCLUDED_PATH_PATTERN =
-  /(^|\/)(attached_assets|\.agents|\.local|seo_strategy\.md|threat_model\.md|replit\.md|\.replit|replit\.nix|artifacts\/(api-server|mockup-sandbox|watson-insurance-sd))(\/|$|\.)/;
+const APPROVED_FILES = new Set([
+  ".gitignore",
+  ".githooks/pre-commit",
+  ".github/workflows/medicare-site-hygiene.yml",
+  "README.md",
+  "package.json",
+  "pnpm-lock.yaml",
+  "pnpm-workspace.yaml",
+  ".npmrc",
+  "tsconfig.base.json",
+  "tsconfig.json",
+]);
+const APPROVED_PREFIXES = [
+  "artifacts/medicare-site/",
+  "lib/api-client-react/",
+  "scripts/",
+];
 
 function git(args, options = {}) {
   const output = execFileSync("git", args, {
@@ -33,30 +50,81 @@ function git(args, options = {}) {
 
 const tempDirectory = mkdtempSync(join(tmpdir(), "medicare-github-sync-"));
 const indexPath = join(tempDirectory, "index");
+const archivePath = join(tempDirectory, "source.tar");
+const exportDirectory = join(tempDirectory, "source");
 
 try {
   git(["fetch", "--no-tags", REMOTE, REMOTE_BRANCH]);
 
   const remoteRef = `${REMOTE}/${REMOTE_BRANCH}`;
-  const environment = { ...process.env, GIT_INDEX_FILE: indexPath };
+  const gitDirectory = git(["rev-parse", "--absolute-git-dir"], {
+    capture: true,
+  });
+  mkdirSync(exportDirectory);
+  git([
+    "archive",
+    "--format=tar",
+    `--output=${archivePath}`,
+    "HEAD",
+    "--",
+    ...APPROVED_PATHS,
+  ]);
+  execFileSync("tar", ["-xf", archivePath, "-C", exportDirectory], {
+    stdio: "inherit",
+  });
 
-  git(["read-tree", remoteRef], { env: environment });
-  git(["add", "-A", "--", ...APPROVED_PATHS], { env: environment });
+  const environment = {
+    ...process.env,
+    GIT_DIR: gitDirectory,
+    GIT_INDEX_FILE: indexPath,
+    GIT_WORK_TREE: exportDirectory,
+  };
+  const temporaryGitOptions = { cwd: exportDirectory, env: environment };
 
-  const tree = git(["write-tree"], { capture: true, env: environment });
-  const remoteTree = git(["rev-parse", `${remoteRef}^{tree}`], { capture: true });
-
-  if (tree === remoteTree) {
-    git(["update-ref", `refs/heads/${MIRROR_BRANCH}`, remoteRef]);
-    console.log("GitHub already has the current Medicare source.");
-    process.exit(0);
-  }
+  git(["read-tree", "--empty"], temporaryGitOptions);
+  git(["add", "-A", "--", "."], temporaryGitOptions);
+  const tree = git(["write-tree"], {
+    ...temporaryGitOptions,
+    capture: true,
+  });
 
   const trackedPaths = git(["ls-tree", "-r", "--name-only", tree], {
     capture: true,
+  })
+    .split("\n")
+    .filter(Boolean);
+  const unapprovedPaths = trackedPaths.filter(
+    (path) =>
+      !APPROVED_FILES.has(path) &&
+      !APPROVED_PREFIXES.some((prefix) => path.startsWith(prefix)),
+  );
+  if (unapprovedPaths.length > 0) {
+    throw new Error(
+      `Refusing to sync unapproved paths: ${unapprovedPaths.join(", ")}`,
+    );
+  }
+  const missingFiles = [...APPROVED_FILES].filter(
+    (path) => !trackedPaths.includes(path),
+  );
+  const missingPrefixes = APPROVED_PREFIXES.filter(
+    (prefix) => !trackedPaths.some((path) => path.startsWith(prefix)),
+  );
+  if (missingFiles.length > 0 || missingPrefixes.length > 0) {
+    throw new Error(
+      `Refusing to sync an incomplete tree. Missing: ${[
+        ...missingFiles,
+        ...missingPrefixes,
+      ].join(", ")}`,
+    );
+  }
+
+  const remoteTree = git(["rev-parse", `${remoteRef}^{tree}`], {
+    capture: true,
   });
-  if (trackedPaths.split("\n").some((path) => EXCLUDED_PATH_PATTERN.test(path))) {
-    throw new Error("Refusing to sync because an excluded workspace path is present.");
+  if (tree === remoteTree) {
+    git(["update-ref", `refs/heads/${MIRROR_BRANCH}`, remoteRef]);
+    console.log("GitHub already has the current committed Medicare source.");
+    process.exit(0);
   }
 
   const authorName = git(["show", "-s", "--format=%an", remoteRef], {
