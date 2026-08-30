@@ -1,0 +1,30 @@
+kind = "web"
+previewPath = "/"
+title = "Ashley Watson Medicare"
+version = "1.0.0"
+id = "artifacts/medicare-site"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 25970
+
+[services.development]
+run = "pnpm --filter @workspace/medicare-site run dev"
+
+[services.production]
+
+[services.production.build]
+args = ["pnpm", "--filter", "@workspace/medicare-site", "run", "build:ci"]
+
+[services.production.run]
+args = ["node", "artifacts/medicare-site/server.mjs"]
+
+[services.env]
+PORT = "25970"
+BASE_PATH = "/"
