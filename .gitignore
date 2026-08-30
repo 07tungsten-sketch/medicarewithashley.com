@@ -53,6 +53,10 @@ playwright/.cache/
 # Replit
 .cache/
 .local/
+/.replit
+/.replitignore
+/replit.md
+/replit.nix
 
 # Workspace-only material
 /attached_assets/
