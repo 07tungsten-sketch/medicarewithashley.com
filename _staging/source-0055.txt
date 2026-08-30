@@ -1,0 +1,117 @@
+<title>A Simple Guide to Medicare in California | Medicare with Ashley San Diego</title>
+<meta name="description" content="New to Medicare? This plain-language guide covers everything California residents need to know — what Medicare covers, what it costs, how to enroll, and how to choose the right plan.">
+<meta name="date" content="2026-05-13">
+
+<h1>A Simple Guide to Medicare in California</h1>
+
+<p>Medicare doesn't have to be complicated. This guide is written for California residents who are new to Medicare — or who just want a clear, honest overview without the insurance industry jargon. Let's start from the beginning.</p>
+
+<h2>What Is Medicare?</h2>
+
+<p>Medicare is the federal health insurance program primarily for people 65 and older, though it also covers some people with disabilities or certain medical conditions at a younger age. It's funded through Medicare taxes you've paid throughout your working life, and it's available regardless of your income or health status.</p>
+
+<h2>The Four Parts of Medicare</h2>
+
+<h3>Part A — Hospital Insurance</h3>
+<p>Part A covers inpatient hospital care, skilled nursing facility care (after a qualifying hospital stay), hospice care, and some home health services. For most people who worked in the U.S. for 10 or more years, Part A is <strong>free</strong> — no monthly premium.</p>
+
+<h3>Part B — Medical Insurance</h3>
+<p>Part B covers outpatient medical services: doctor visits, preventive care, lab tests, X-rays, outpatient surgery, durable medical equipment, and mental health services. Part B has a monthly premium — $185/month in 2025 for most people — and a $257 annual deductible. After the deductible, Medicare covers 80% of covered services; you typically pay 20%.</p>
+
+<h3>Part C — Medicare Advantage</h3>
+<p>Medicare Advantage is an alternative way to get your Medicare benefits through a private insurance company instead of directly through the federal government. Medicare Advantage plans bundle Part A and Part B coverage (and usually Part D drug coverage) into one plan. Many plans offer $0 premiums and extras like dental and vision. California has excellent Medicare Advantage plan options, especially in the San Diego area.</p>
+
+<h3>Part D — Prescription Drug Coverage</h3>
+<p>Part D is Medicare's prescription drug benefit. It's offered through private insurers and covers a wide range of brand-name and generic medications. Premiums, deductibles, and copays vary by plan. Starting in 2025, there's a $2,000 annual cap on out-of-pocket drug costs — a significant new protection.</p>
+
+<h2>How Do I Sign Up for Medicare in California?</h2>
+
+<p>You typically sign up for Medicare through the Social Security Administration, either online at SSA.gov, by calling 1-800-772-1213, or by visiting a local Social Security office. In California, you can also get enrollment help through:</p>
+<ul>
+  <li>HICAP (Health Insurance Counseling and Advocacy Program) — free state counseling</li>
+  <li>A local independent Medicare broker like Ashley Watson — free, personalized help</li>
+</ul>
+
+<h2>When Should I Sign Up?</h2>
+
+<p>Your <strong>Initial Enrollment Period</strong> is a 7-month window: 3 months before your 65th birthday month, your birthday month itself, and 3 months after. Enroll early in this window for the earliest possible coverage start date.</p>
+
+<p>If you're still working and covered by an employer plan at 65, you may qualify to delay Medicare Part B without penalty — but the rules depend on your employer's size. (See our article on <a href="/blog/medicare-vs-employer-coverage-california">Medicare vs. Employer Coverage</a> for details.)</p>
+
+<h2>What Does Medicare Cost in California?</h2>
+
+<p>Here's a simple cost breakdown for 2025:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Part</th>
+      <th>Monthly Premium</th>
+      <th>Deductible</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Part A</td>
+      <td>$0 for most people</td>
+      <td>$1,676 per benefit period (hospital)</td>
+    </tr>
+    <tr>
+      <td>Part B</td>
+      <td>$185/month (standard)</td>
+      <td>$257/year</td>
+    </tr>
+    <tr>
+      <td>Part D</td>
+      <td>Varies by plan (~$0–$100+)</td>
+      <td>Up to $590/year</td>
+    </tr>
+    <tr>
+      <td>Medicare Advantage (Part C)</td>
+      <td>Often $0 (includes A, B, D)</td>
+      <td>Varies by plan</td>
+    </tr>
+    <tr>
+      <td>Medigap Supplement</td>
+      <td>$80–$200+/month (adds to Part B)</td>
+      <td>Typically very low</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Higher-income beneficiaries may pay more for Part B and Part D through IRMAA (Income-Related Monthly Adjustment Amount) surcharges.</p>
+
+<h2>Original Medicare vs. Medicare Advantage: Which Is Better?</h2>
+
+<p>This is the central choice most people face. In short:</p>
+
+<ul>
+  <li><strong>Original Medicare</strong> (Parts A + B) lets you see any doctor in the country who accepts Medicare, with no network restrictions. You'd pair it with a Part D plan and possibly a Medigap plan for comprehensive coverage.</li>
+  <li><strong>Medicare Advantage</strong> (Part C) bundles everything into one plan, often with $0 premiums and extras like dental and vision. You use a provider network and may need referrals for specialists.</li>
+</ul>
+
+<p>Neither is universally better. The right choice depends on your health, your doctors, how much you travel, and your budget. An independent broker can help you compare honestly.</p>
+
+<h2>California-Specific Medicare Protections to Know</h2>
+
+<p>California offers a few Medicare-related protections beyond what federal law requires:</p>
+
+<ul>
+  <li><strong>The Birthday Rule:</strong> Each year during a 60-day window around your birthday, you can switch to an equal or lesser Medigap plan with guaranteed acceptance — no health questions. This gives California residents more flexibility to change Medigap plans than most other states allow.</li>
+  <li><strong>Medi-Cal integration:</strong> California's Medicaid program (Medi-Cal) has relatively generous eligibility thresholds, and many California seniors qualify for assistance they don't know about.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Does Medicare cover everything?</h3>
+<p>No. Original Medicare covers most medically necessary care but has significant gaps — it pays 80% of most Part B costs (you pay 20%), has hospital deductibles, and generally doesn't cover routine dental, vision, or hearing care. Medigap plans and Medicare Advantage plans help fill these gaps.</p>
+
+<h3>Is Medicare free?</h3>
+<p>Part A is usually free. Part B has a monthly premium ($185 in 2025). Medicare Advantage plans often have $0 additional premiums on top of Part B. Medigap plans add a monthly premium. So "free" depends on the choices you make.</p>
+
+<h3>Do I have to choose a plan, or does Medicare just happen automatically?</h3>
+<p>You need to actively enroll. If you receive Social Security benefits before 65, you may be automatically enrolled in Parts A and B, but you still need to actively choose a Medicare Advantage or Part D plan if you want that coverage.</p>
+
+<h2>Get Free, Local Help in San Diego County</h2>
+
+<p>Ashley Watson is a licensed, independent Medicare broker serving San Diego County. She helps California residents understand their options and enroll in the right plan — with no fees, no pressure, and no obligation. <a href="/schedule">Book a free consultation</a> or call <a href="tel:+16199472325">(619) 947-2325</a> seven days a week.</p>
