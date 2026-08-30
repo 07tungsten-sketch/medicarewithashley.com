@@ -1,0 +1,38 @@
+#!/bin/sh
+# Pre-commit hook — enforced for every developer via `git config core.hooksPath .githooks`
+# (set automatically by the root `prepare` script when you run `pnpm install`)
+
+# ---------------------------------------------------------------------------
+# Spec-hygiene checks (artifacts/medicare-site)
+# 1. Any Playwright spec that sets test.use({ viewport }) must also carry a
+#    test.skip project guard so it only runs under the intended browser project.
+# 2. No spec may contain test.only() or it.only() — focused tests block all
+#    other specs from running in CI.
+# ---------------------------------------------------------------------------
+
+SCRIPT="artifacts/medicare-site/e2e/check-viewport-guards.mjs"
+UNIT_SCRIPT="artifacts/medicare-site/scripts/check-unit-test-hygiene.mjs"
+
+if [ -f "$SCRIPT" ]; then
+  node "$SCRIPT"
+  status=$?
+  if [ $status -ne 0 ]; then
+    echo ""
+    echo "Commit blocked by viewport-guard check."
+    echo "Fix the issues listed above, then commit again."
+    exit 1
+  fi
+fi
+
+if [ -f "$UNIT_SCRIPT" ]; then
+  node "$UNIT_SCRIPT"
+  status=$?
+  if [ $status -ne 0 ]; then
+    echo ""
+    echo "Commit blocked by unit-test hygiene check."
+    echo "Fix the focused Vitest test or suite listed above, then commit again."
+    exit 1
+  fi
+fi
+
+exit 0
